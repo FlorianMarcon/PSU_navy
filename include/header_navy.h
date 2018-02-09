@@ -8,6 +8,9 @@
 #ifndef NAVY_
 #define NAVY_
 
+#define SIZE 14
+#define NB_ARGU 4
+
 int	my_navy(int nb_argu, char **av);
 
 int	first_player(char **av);
@@ -15,10 +18,11 @@ int	first_player(char **av);
 int	second_player(char **av);
 
 //
-
 typedef struct point {
 	int x;
 	int y;
+
+	char value;
 }point_t;
 
 typedef struct coord {

@@ -16,16 +16,21 @@ SRC	=	$(WAY)/utilitaries/inutile_function.c	\
 		$(WAY)/utilitaries/absolue.c		\
 		$(WAY)/map/create_base_map.c		\
 		$(WAY)/map/display_map.c		\
+		$(WAY)/map/put_point_in_map.c		\
 		$(WAY)/get_coordonate/get_coordonate.c	\
 		$(WAY)/get_coordonate/put_data_in_coord.c	\
+		$(WAY)/get_coordonate/create_list_point_by_coord.c	\
 
 SRC_UT	=	./utilitaries/tests_utils.c	\
 		./utilitaries/tests_utils_second.c	\
 		./map/tests_utils.c		\
 		./map/tests_utils_second.c	\
 		./map/tests_utils_third.c	\
+		./map/tests_utils_four.c	\
 		./get_coordonate/tests_utils.c	\
 		./get_coordonate/tests_utils_second.c	\
+		./get_coordonate/tests_utils_third.c	\
+		./get_coordonate/tests_utils_four.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -48,10 +53,11 @@ all:	$(OBJ) $(OBJ_UT)
 
 clean:
 	$(RM) $(OBJ)
-	$(RM) $(OBJ:.c=.gcda)
-	$(RM) $(OBJ:.c=.gcno)
-	$(RM) $(OBJ_UT:.c=.gcda)
-	$(RM) $(OBJ_UT:.c=.gcno)
+	$(RM) $(OBJ_UT)
+	$(RM) $(OBJ:.o=.gcda)
+	$(RM) $(OBJ:.o=.gcno)
+	$(RM) $(OBJ_UT:.o=.gcda)
+	$(RM) $(OBJ_UT:.o=.gcno)
 
 fclean:	clean
 	$(RM) $(NAME)

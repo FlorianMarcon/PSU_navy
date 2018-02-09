@@ -38,6 +38,18 @@ void	destroy_list_coord(coord_t **cor)
 	free(cor);
 }
 
+int	verify_size_coordonate(coord_t **cor)
+{
+	int i = 0;
+	int result = 0;
+
+	while (cor[i] != NULL) {
+		result += cor[i++]->size;
+	}
+	if (result != SIZE)
+		return (0);
+	return (1);
+}
 coord_t	**get_coordonate(char *path)
 {
 	int fd = open(path, O_RDONLY);
@@ -65,7 +77,7 @@ coord_t	**get_coordonate(char *path)
 		}
 	}
 	close(fd);
-	if (i != 4) {
+	if (i != 4 || verify_size_coordonate(cor) != 1) {
 		destroy_list_coord(cor);
 		return (NULL);
 	}

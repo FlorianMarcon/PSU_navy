@@ -12,6 +12,9 @@ coord_t	*put_data_in_coord(char *str);
 int	verify_coord(coord_t *cor);
 point_t	*put_coordonate_in_point(char col, char line);
 void	destroy_coord(coord_t *cor);
+int	verify_size_coordonate(coord_t **cor);
+coord_t	**get_coordonate(char *path);
+void	destroy_list_coord(coord_t **cor);
 
 Test(put_data_in_coord, test1)
 {
@@ -55,4 +58,13 @@ Test(verify_coord, test1)
 		cor->size = 3;
 		cr_assert_eq(verify_coord(cor), 0);
 	}
+}
+Test(verify_size_coordonate, test1)
+{
+	coord_t **cor = get_coordonate("data/real_coordonate");
+
+	cr_assert_eq(verify_size_coordonate(cor), 1);
+	cor[0]->size = 16;
+	cr_assert_eq(verify_size_coordonate(cor), 0);
+	destroy_list_coord(cor);
 }

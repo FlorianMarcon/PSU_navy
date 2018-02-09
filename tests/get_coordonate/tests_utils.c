@@ -35,17 +35,17 @@ Test(get_coordonate, test1)
 }
 Test(get_coordonate, test2)
 {
-	coord_t **cor = get_coordonate("data/coordonate");
+	coord_t **cor = get_coordonate("data/real_coordonate");
 	int i = 0;
 
 	cr_assert_neq(cor, NULL);
-	while (cor[i] != NULL) {
-		cr_assert_eq(cor[i]->size, 2);
-		cr_assert_eq(cor[i]->pa->x, 2);
-		cr_assert_eq(cor[i]->pa->y, 3);
-		cr_assert_eq(cor[i]->pb->x, 3);
-		cr_assert_eq(cor[i]->pb->y, 3);
-		i++;
-	}
+	cr_assert_eq(cor[i]->size, 2);
+	cr_assert_eq(cor[i]->pa->x, 2);
+	cr_assert_eq(cor[i]->pa->y, 0);
+	cr_assert_eq(cor[i]->pb->x, 2);
+	cr_assert_eq(cor[i]->pb->y, 1);
+	cr_assert_eq(cor[4], NULL);
 	destroy_list_coord(cor);
+	cor = get_coordonate("data/coordonate");
+	cr_assert_eq(cor, NULL);
 }
