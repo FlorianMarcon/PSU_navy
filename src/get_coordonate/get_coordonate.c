@@ -63,12 +63,11 @@ coord_t	**get_coordonate(char *path)
 			close(fd);
 			return (NULL);
 		}
-		i++;
 	}
 	close(fd);
-//	if (i != 4) {
-//		destroy_list_coord(cor);
-//		return (NULL);
-//	}
+	if (i != 4) {
+		destroy_list_coord(cor);
+		return (NULL);
+	}
 	return (cor);
 }
