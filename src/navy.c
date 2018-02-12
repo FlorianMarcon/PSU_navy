@@ -13,7 +13,7 @@ int	my_navy(int nb_argu, char **av)
 	int res = 84;
 
 	if (nb_argu == 1)
-		res = first_player(av);
+		res = first_player(av[0]);
 	else
 		res = second_player(av);
 	return (res);

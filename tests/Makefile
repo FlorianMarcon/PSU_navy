@@ -14,6 +14,9 @@ SRC	=	$(WAY)/utilitaries/inutile_function.c	\
 		$(WAY)/utilitaries/put_coordonate_in_point.c	\
 		$(WAY)/utilitaries/destroy_coord.c	\
 		$(WAY)/utilitaries/absolue.c		\
+		$(WAY)/utilitaries/register_pid.c	\
+		$(WAY)/utilitaries/verify_connexion.c	\
+		$(WAY)/utilitaries/destroy_nav.c	\
 		$(WAY)/map/create_base_map.c		\
 		$(WAY)/map/display_map.c		\
 		$(WAY)/map/put_point_in_map.c		\

@@ -14,6 +14,20 @@ SRC	=	$(WAY)/main.c		\
 		$(WAY)/first_player/first_player.c	\
 		$(WAY)/second_player/second_player.c	\
 		$(WAY)/utilitaries/inutile_function.c	\
+		$(WAY)/utilitaries/verify_coordonate.c	\
+		$(WAY)/utilitaries/put_coordonate_in_point.c	\
+		$(WAY)/utilitaries/destroy_coord.c	\
+		$(WAY)/utilitaries/absolue.c		\
+		$(WAY)/utilitaries/register_pid.c	\
+		$(WAY)/utilitaries/verify_connexion.c	\
+		$(WAY)/utilitaries/destroy_nav.c	\
+		$(WAY)/map/create_base_map.c		\
+		$(WAY)/map/display_map.c		\
+		$(WAY)/map/put_point_in_map.c		\
+		$(WAY)/map/prepare_navy.c		\
+		$(WAY)/get_coordonate/get_coordonate.c	\
+		$(WAY)/get_coordonate/put_data_in_coord.c	\
+		$(WAY)/get_coordonate/create_list_point_by_coord.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

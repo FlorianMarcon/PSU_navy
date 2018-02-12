@@ -11,9 +11,11 @@
 #define SIZE 14
 #define NB_ARGU 4
 
+int pid_enemy;
+
 int	my_navy(int nb_argu, char **av);
 
-int	first_player(char **av);
+int	first_player(char *path);
 
 int	second_player(char **av);
 
@@ -23,7 +25,6 @@ typedef struct point {
 	int y;
 
 	int value;
-//	char value;
 }point_t;
 
 typedef struct coord {

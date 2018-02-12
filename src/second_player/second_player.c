@@ -12,18 +12,21 @@
 #include "my.h"
 #include "header_navy.h"
 #include "my_printf.h"
+void	verify_connexion(int sig, siginfo_t *inf, void *a);
 
 int	second_player(char **av)
 {
-	int id_f = my_getnbr(av[0]);
 	struct sigaction ac;
-
-	ac.sa_handler = &inutile_function;
+	pid_enemy = my_getnbr(av[0]);
+	ac.sa_sigaction = &verify_connexion;
+	ac.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &ac, NULL);
 	my_printf("my_pid:	%i\n", getpid());
-	if (kill(id_f, SIGUSR1) != 0)
-		my_printf("%s\n", "echec");;
+	if (kill(pid_enemy, SIGUSR1) != 0)
+		return (-1);
 	pause();
+	if (pid_enemy == -1)
+		return (-1);
 	my_printf("successfully connected\n");
 	return (1);
 }
