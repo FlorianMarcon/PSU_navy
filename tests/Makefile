@@ -17,6 +17,7 @@ SRC	=	$(WAY)/utilitaries/inutile_function.c	\
 		$(WAY)/map/create_base_map.c		\
 		$(WAY)/map/display_map.c		\
 		$(WAY)/map/put_point_in_map.c		\
+		$(WAY)/map/prepare_navy.c		\
 		$(WAY)/get_coordonate/get_coordonate.c	\
 		$(WAY)/get_coordonate/put_data_in_coord.c	\
 		$(WAY)/get_coordonate/create_list_point_by_coord.c	\
@@ -27,6 +28,7 @@ SRC_UT	=	./utilitaries/tests_utils.c	\
 		./map/tests_utils_second.c	\
 		./map/tests_utils_third.c	\
 		./map/tests_utils_four.c	\
+		./map/tests_utils_five.c	\
 		./get_coordonate/tests_utils.c	\
 		./get_coordonate/tests_utils_second.c	\
 		./get_coordonate/tests_utils_third.c	\

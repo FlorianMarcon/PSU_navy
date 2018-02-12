@@ -10,17 +10,20 @@
 #include "my.h"
 #include "my_printf.h"
 #include "header_navy.h"
+map_t	*create_base_map(int x, int y);
 
-int	first_player(char **av)
-{/*
-	struct sigaction ac;
+int	first_player(char *path)
 
-	ac.sa_handler = &inutile_function;
-	sigaction(SIGUSR1, &ac, NULL);
-	my_printf("my_pid:	%i\n", getpid());
-	my_printf("waiting for enemy %sconnexion...\n", av[0]);
-	pause();
-	my_printf("enemy conected\n");*/
-	navy_t nav = {generate_map_me(av[0]), generate_map_you()};
+	navy_t *nav = malloc(sizeof(*nav));
+	coord_t **cor = get_coordonate(path);
+	linked_list_t *list = NULL;
+
+	if (nav == NULL || cor == NULL)
+		return (-1);
+	nav->map_me = create_base_map(8, 8);
+	nav->map_you = create_base_map(8, 8);
+	list = create_list_point_by_coord(cor);
+	if (list == NULL)
+		return (-1);
 	return (1);
 }

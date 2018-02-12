@@ -22,7 +22,8 @@ typedef struct point {
 	int x;
 	int y;
 
-	char value;
+	int value;
+//	char value;
 }point_t;
 
 typedef struct coord {

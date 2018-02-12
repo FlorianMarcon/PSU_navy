@@ -9,7 +9,7 @@
 #include "header_navy.h"
 #include "my.h"
 
-int	add_point_list(linked_list_t *list, int x, int y, char c)
+int	add_point_list(linked_list_t *list, int x, int y, int c)
 {
 	point_t *point = malloc(sizeof(*point));
 
@@ -35,7 +35,7 @@ int	second_put_coord_in_list_point(linked_list_t *list, coord_t *cor)
 		revar = cor->pa->x;
 	}
 	while (var <= revar) {
-		if (add_point_list(list, var, cor->pa->y, size + '0') == -1)
+		if (add_point_list(list, var, cor->pa->y, size) == -1)
 			return (-1);
 		var++;
 	}
@@ -55,7 +55,7 @@ int	first_put_coord_in_list_point(linked_list_t *list, coord_t *cor)
 		revar = cor->pa->y;
 	}
 	while (var <= revar) {
-		if (add_point_list(list, cor->pa->x, var, size + '0') == -1)
+		if (add_point_list(list, cor->pa->x, var, size) == -1)
 			return (-1);
 		var++;
 	}
