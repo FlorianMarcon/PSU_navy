@@ -10,6 +10,8 @@
 
 #define SIZE 14
 #define NB_ARGU 4
+#define MAP_X 8
+#define MAP_Y 8
 
 int pid_enemy;
 
@@ -18,6 +20,11 @@ int	my_navy(int nb_argu, char **av);
 int	first_player(char *path);
 
 int	second_player(char **av);
+
+typedef struct laos {
+	int result;
+	int finish;
+}laos_t;
 
 //
 typedef struct point {

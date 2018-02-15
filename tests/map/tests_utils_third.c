@@ -63,7 +63,7 @@ Test(display_map_me, test1)
 	char real[] = " |A B C D E F G H\n\
 -+---------------\n1|. 1 . . . . . 2\n2|. . . . . . . .\n3|. . . . . . . .\n\
 4|. . . . . . . .\n5|. . . . . . . .\n6|. . . . . . . .\n7|. . . . . . . .\n\
-8|. . . . . . . .\n";
+8|. . . . . . . .\n\n\n";
 	map_t *map = mmaapp();
 
 	cr_redirect_stdout();

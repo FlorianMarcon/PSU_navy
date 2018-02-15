@@ -12,7 +12,9 @@ WAY	=	./src
 SRC	=	$(WAY)/main.c		\
 		$(WAY)/navy.c		\
 		$(WAY)/first_player/first_player.c	\
+		$(WAY)/first_player/game_first_player.c	\
 		$(WAY)/second_player/second_player.c	\
+		$(WAY)/second_player/game_second_player.c	\
 		$(WAY)/utilitaries/inutile_function.c	\
 		$(WAY)/utilitaries/verify_coordonate.c	\
 		$(WAY)/utilitaries/put_coordonate_in_point.c	\
@@ -21,6 +23,10 @@ SRC	=	$(WAY)/main.c		\
 		$(WAY)/utilitaries/register_pid.c	\
 		$(WAY)/utilitaries/verify_connexion.c	\
 		$(WAY)/utilitaries/destroy_nav.c	\
+		$(WAY)/utilitaries/recuperate_info.c	\
+		$(WAY)/utilitaries/party_is_finished.c	\
+		$(WAY)/utilitaries/send_message.c	\
+		$(WAY)/utilitaries/translate_coordonate.c	\
 		$(WAY)/map/create_base_map.c		\
 		$(WAY)/map/display_map.c		\
 		$(WAY)/map/put_point_in_map.c		\
@@ -28,6 +34,9 @@ SRC	=	$(WAY)/main.c		\
 		$(WAY)/get_coordonate/get_coordonate.c	\
 		$(WAY)/get_coordonate/put_data_in_coord.c	\
 		$(WAY)/get_coordonate/create_list_point_by_coord.c	\
+		$(WAY)/game/wait_message.c		\
+		$(WAY)/game/receive_message.c		\
+		$(WAY)/game/put_point_in_map.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

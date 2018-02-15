@@ -40,6 +40,7 @@ void	display_map_enemy(map_t *map)
 		}
 		y++;
 	}
+	my_printf("\n\n");
 }
 void	choice_display_me(int y, int x, map_t *map)
 {
@@ -75,4 +76,13 @@ void	display_map_me(map_t *map)
 		}
 		y++;
 	}
+	my_printf("\n\n");
+}
+
+void	display_all(navy_t *nav)
+{
+	my_printf("my positions:\n");
+	display_map_me(nav->map_me);
+	my_printf("enemy's positions:\n");
+	display_map_enemy(nav->map_you);
 }

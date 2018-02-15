@@ -17,7 +17,6 @@ void	verify_connexion(int sig, siginfo_t *inf, void *a)
 	if (sig == sig && a == a && inf->si_pid != pid_enemy)
 		pid_enemy = -1;
 	else {
-	my_printf("pid_enemy = %i\n", inf->si_pid);
 		if (kill(pid_enemy, SIGUSR1) != 0)
 			pid_enemy = -1;
 }}

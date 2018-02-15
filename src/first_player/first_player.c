@@ -17,11 +17,12 @@ navy_t	*prepare_nav(char *path);
 void	display_map_me(map_t *map);
 void	register_pid(int sig, siginfo_t *inf, void *a);
 void	second_verify_connexion(int sig, siginfo_t *inf, void *a);
+int	game_first_player(char *path);
 
 int	first_player(char *path)
 {
-//	navy_t *nav = prepare_nav(path);
 	struct sigaction *act = malloc(sizeof(*act));
+	int res;
 
 	if (act == NULL)
 		return (-1);
@@ -35,11 +36,9 @@ int	first_player(char *path)
 	sigaction(SIGUSR1, act, NULL);
 	pause();
 	free(act);
-	if (pid_enemy == -1) {
-//		destroy_nav(nav);
+	if (pid_enemy == -1)
 		return (-1);
-	}
-	my_printf("enemy connected%s\n\n", path);
-//	display_map_me(nav->map_me);
-	return (1);
+	my_printf("enemy connected\n\n");
+	res = game_first_player(path);
+	return (res);
 }
