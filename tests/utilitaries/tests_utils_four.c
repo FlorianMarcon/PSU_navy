@@ -6,9 +6,11 @@
 */
 
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include "header_navy.h"
 #include "my.h"
 point_t	*translate_coordonate(char *msg);
+void	translate_coordonate_in_msg(point_t *p);
 
 Test(translate_coordonate, test1)
 {
@@ -33,4 +35,13 @@ Test(translate_coordonate, test2)
 	cr_assert_eq(p->x, 7);
 	cr_assert_eq(p->x, 7);
 	free(p);
+}
+
+Test(translate_coordonate_in_msg, test1)
+{
+	point_t p = {0, 0, 0};
+
+	cr_redirect_stdout();
+	translate_coordonate_in_msg(&p);
+	cr_assert_stdout_eq_str("A1:	");
 }

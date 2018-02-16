@@ -69,9 +69,11 @@ Test(first_put_coord_in_list_point, test1)
 	coord_t *cor = create_ccoorr();
 	point_t *p = NULL;
 
-	if (cor != NULL) {
+	if (cor != NULL && list != NULL) {
 		cr_assert_eq(first_put_coord_in_list_point(NULL, cor), -1);
+		my_printf("START\n");
 		cr_assert_eq(first_put_coord_in_list_point(list, cor), 1);
+		my_printf("END\n");
 		list = list->next;
 		cr_assert_eq(len_list(list), cor->size);
 		p = (point_t *)(list->data);
