@@ -13,16 +13,21 @@
 
 void	verify_connexion(int sig, siginfo_t *inf, void *a)
 {
+	(void)sig;
+	(void)a;
 	usleep(200000);
-	if (sig == sig && a == a && inf->si_pid != pid_enemy)
+	if (inf->si_pid != pid_enemy)
 		pid_enemy = -1;
 	else {
 		if (kill(pid_enemy, SIGUSR1) != 0)
 			pid_enemy = -1;
-}}
+	}
+}
 
 void	second_verify_connexion(int sig, siginfo_t *inf, void *a)
 {
-	if (sig == sig && a == a && inf->si_pid != pid_enemy)
+	(void)sig;
+	(void)a;
+	if (inf->si_pid != pid_enemy)
 		pid_enemy = -1;
 }
