@@ -19,14 +19,13 @@ void	register_pid(int sig, siginfo_t *inf, void *a);
 void	second_verify_connexion(int sig, siginfo_t *inf, void *a);
 int	game_first_player(char *path);
 
-int	first_player(char *path)
+int	connection_game(void)
 {
 	struct sigaction *act = malloc(sizeof(*act));
-	int res;
 
 	if (act == NULL)
 		return (-1);
-	my_printf("my_pid:	%i\n", getpid());
+	my_printf("my_pid: %i\n", getpid());
 	my_printf("waiting for enemy connection...\n\n");
 	act->sa_sigaction = &register_pid;
 	act->sa_flags = SA_SIGINFO;
@@ -36,8 +35,17 @@ int	first_player(char *path)
 	sigaction(SIGUSR1, act, NULL);
 	pause();
 	free(act);
+	return (1);
+}
+int	first_player(char *path)
+{
+	int res;
+	navy_t *nav = prepare_nav(path);
+
+	if (nav == NULL || connection_game() == -1)
+		return (84);
 	if (pid_enemy == -1)
-		return (-1);
+		return (84);
 	my_printf("enemy connected\n\n");
 	res = game_first_player(path);
 	return (res);

@@ -25,17 +25,15 @@ int	game_first_player(char *path)
 	navy_t *nav = prepare_nav(path);
 	int res = 0;
 
-	if (nav == NULL)
-		return (84);
 	display_all(nav);
 	while ((res = party_is_finished(nav)) == 0) {
-		if (receive_message(nav) == -1) {
-			destroy_nav(nav);
-			return (0);
-		}
 		if (wait_message(nav) == 0) {
 			destroy_nav(nav);
 			return (0);
+		}
+		if (receive_message(nav) == -1) {
+			destroy_nav(nav);
+			return (-1);
 		}
 		display_all(nav);
 	}

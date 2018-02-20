@@ -20,20 +20,19 @@ int	wait_message(navy_t *nav);
 int	receive_message(navy_t *nav);
 void	destroy_nav(navy_t *nav);
 
-int	game_second_player(char *path)
+int	game_second_player(navy_t *nav)
 {
-	navy_t *nav = prepare_nav(path);
 	int res = 0;
 
 	display_all(nav);
 	while ((res = party_is_finished(nav)) == 0) {
-		if (wait_message(nav) == 0) {
+		if (receive_message(nav) == -1) {
 			destroy_nav(nav);
 			return (0);
 		}
-		if (receive_message(nav) == -1) {
+		if (wait_message(nav) == 0) {
 			destroy_nav(nav);
-			return (-1);
+			return (0);
 		}
 		display_all(nav);
 	}
