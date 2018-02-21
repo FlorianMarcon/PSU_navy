@@ -27,5 +27,5 @@ point_t	*translate_coordonate(char *msg)
 void	translate_coordonate_in_msg(point_t *p)
 {
 	my_printf("%c\0", p->x + 'A');
-	my_printf("%c:	\0", p->y + '1');
+	my_printf("%c: \0", p->y + '1');
 }

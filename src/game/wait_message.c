@@ -39,7 +39,7 @@ int	second_party_wait_message(navy_t *nav, point_t *p, char *msg)
 	if (all_send(p) == 0)
 		return (0);
 	value = wait_return(nav, p);
-	my_printf("%s:	\0", msg);
+	my_printf("%s: \0", msg);
 	switch (value) {
 		case 1: my_printf("hit\n\n");
 			break;

@@ -12,6 +12,7 @@
 int	recuperate_info(void);
 int	put_point_map_me(map_t *map, point_t *p);
 int	send_message(int v);
+void	translate_coordonate_in_msg(point_t *p);
 
 int	receive_message(navy_t *nav)
 {
@@ -26,6 +27,7 @@ int	receive_message(navy_t *nav)
 	usleep(200);
 	value = put_point_map_me(nav->map_me, p);
 	send_message(value);
+	translate_coordonate_in_msg(p);
 	switch (value) {
 		case 1: my_printf("hit\n\n");
 			break;
