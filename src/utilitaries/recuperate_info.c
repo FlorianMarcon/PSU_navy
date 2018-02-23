@@ -46,6 +46,8 @@ int	recuperate_info(void)
 
 	get_laos()->finish = 0;
 	get_laos()->result = 0;
+	sigemptyset(&act_usr_one.sa_mask);
+	sigemptyset(&act_usr_two.sa_mask);
 	act_usr_one.sa_flags = SA_SIGINFO;
 	act_usr_two.sa_flags = SA_SIGINFO;
 	act_usr_two.sa_sigaction = &is_finished;

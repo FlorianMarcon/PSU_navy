@@ -27,6 +27,7 @@ int	connection_game(void)
 		return (-1);
 	my_printf("my_pid: %i\n", getpid());
 	my_printf("waiting for enemy connection...\n\n");
+	sigemptyset(&act->sa_mask);
 	act->sa_sigaction = &register_pid;
 	act->sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, act, NULL);

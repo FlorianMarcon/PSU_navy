@@ -25,6 +25,7 @@ int	second_player(char **av)
 	if (nav == NULL)
 		return (res);
 	pid_enemy = my_getnbr(av[0]);
+	sigemptyset(&ac.sa_mask);
 	ac.sa_sigaction = &verify_connexion;
 	ac.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &ac, NULL);
