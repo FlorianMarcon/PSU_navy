@@ -14,7 +14,7 @@
 
 void	register_pid(int sig, siginfo_t *inf, void *a)
 {
-	usleep(2000000);
+	usleep(20000);
 	(void)sig;
 	(void)a;
 	pid_enemy = inf->si_pid;
