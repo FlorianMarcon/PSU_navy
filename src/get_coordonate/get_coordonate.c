@@ -50,41 +50,7 @@ int	verify_size_coordonate(coord_t **cor)
 		return (0);
 	return (1);
 }
-/*
-coord_t	**get_coordonate(char *path)
-{
-	int fd = open(path, O_RDONLY);
-	char *str = NULL;
-	coord_t **cor;
-	int i = 0;
 
-	if (fd == -1)
-		return (NULL);
-	if ((cor = create_list_coord()) == NULL) {
-		close(fd);
-		return (NULL);
-	}
-	while ((str = get_next_line(fd)) != NULL) {
-		if (i == 4) {
-			destroy_list_coord(cor);
-			close(fd);
-			return (NULL);
-		}
-		cor[i] = put_data_in_coord(str);
-		if (cor[i++] == NULL) {
-			destroy_list_coord(cor);
-			close(fd);
-			return (NULL);
-		}
-	}
-	close(fd);
-	if (i != 4 || verify_size_coordonate(cor) != 1) {
-		destroy_list_coord(cor);
-		return (NULL);
-	}
-	return (cor);
-}
-*/
 coord_t	**get_coordonate(char *path)
 {
 	int fd = open(path, O_RDONLY);

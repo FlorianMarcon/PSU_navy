@@ -65,6 +65,6 @@ int	wait_message(navy_t *nav)
 	if (second_party_wait_message(nav, p, str) == 0)
 		return (0);
 	free(p);
-	free (str);
+	free(str);
 	return (1);
 }

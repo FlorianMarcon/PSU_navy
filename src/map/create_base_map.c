@@ -17,14 +17,14 @@ map_t	*malloc_map(int x, int y)
 		return (NULL);
 	map->map = malloc(sizeof(*map->map) * y);
 		if (map->map == NULL) {
-			free (map);
+			free(map);
 			return (NULL);
 		}
 	while (i != y) {
 		map->map[i] = malloc(sizeof(int) * x);
 		if (map->map[i] == NULL) {
-			free (map->map);
-			free (map);
+			free(map->map);
+			free(map);
 			return (NULL);
 		}
 		i++;

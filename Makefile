@@ -11,6 +11,7 @@ WAY	=	./src
 
 SRC	=	$(WAY)/main.c		\
 		$(WAY)/navy.c		\
+		$(WAY)/display_help.c	\
 		$(WAY)/first_player/first_player.c	\
 		$(WAY)/first_player/game_first_player.c	\
 		$(WAY)/second_player/second_player.c	\
